@@ -4,7 +4,11 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 const github = axios.create({
     baseURL: GITHUB_URL,
-    headers: { Authorization: `token ${GITHUB_TOKEN}` }
+    headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    },
 });
 
 // get search results
